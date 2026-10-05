@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Now | Live Weather by City</title>
+  <meta name="description" content="Search any city to see current weather conditions and a 5-day forecast.">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <h1>Weather Now</h1>
+
+    <form id="search-form" role="search">
+      <label for="city">City</label>
+      <div class="search-row">
+        <input id="city" name="city" type="search" placeholder="e.g. Delhi, London, Tokyo"
+               autocomplete="off" required>
+        <button class="btn" type="submit">Search</button>
+      </div>
+    </form>
+
+    <div class="units" role="group" aria-label="Temperature unit">
+      <button type="button" data-unit="celsius" aria-pressed="true">°C</button>
+      <button type="button" data-unit="fahrenheit" aria-pressed="false">°F</button>
+    </div>
+
+    <p id="status" role="status" aria-live="polite">Search for a city to see its weather.</p>
+
+    <section id="current" class="card" aria-labelledby="place" hidden>
+      <h2 id="place"></h2>
+      <div class="now">
+        <span id="icon" class="icon" aria-hidden="true"></span>
+        <p id="temp" class="temp"></p>
+      </div>
+      <p id="desc" class="desc"></p>
+      <dl class="details">
+        <div><dt>Feels like</dt><dd id="feels"></dd></div>
+        <div><dt>Humidity</dt><dd id="humidity"></dd></div>
+        <div><dt>Wind</dt><dd id="wind"></dd></div>
+      </dl>
+    </section>
+
+    <section id="forecast" class="card" aria-labelledby="forecast-title" hidden>
+      <h2 id="forecast-title">5-day forecast</h2>
+      <ul id="forecast-list"></ul>
+    </section>
+  </main>
+</body>
+</html>
